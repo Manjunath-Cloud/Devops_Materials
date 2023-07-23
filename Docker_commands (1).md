@@ -48,5 +48,6 @@ docker exec -it "container_id" /bin/bash
 
 docker run --restart unless-stopped <your-container-options>
 
-
+**To Build Docker Image**
+docker build -t tomcat_helloworld_project .    (Where dot represents Present folder, tomcat_helloworld_project represents project name, docker bulid -t represents command to build docker file)
 
