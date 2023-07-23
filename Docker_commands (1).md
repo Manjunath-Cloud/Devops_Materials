@@ -51,3 +51,7 @@ docker run --restart unless-stopped <your-container-options>
 **To Build Docker Image**
 docker build -t tomcat_helloworld_project .    (Where dot represents Present folder, tomcat_helloworld_project represents project name, docker bulid -t represents command to build docker file)
 
+**To Push Docker Images to Docker Hub**
+docker login -u "userid" -p "password"
+docker tag tomcat_helloworld_project manjunathr03/tomcat_helloworld_project  (Where tomcat_helloworld_project is a name of docker image & manjunathr03 is a user id of docker hub)
+
