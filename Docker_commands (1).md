@@ -54,4 +54,5 @@ docker build -t tomcat_helloworld_project .    (Where dot represents Present fol
 **To Push Docker Images to Docker Hub**
 docker login -u "userid" -p "password"
 docker tag tomcat_helloworld_project manjunathr03/tomcat_helloworld_project  (Where tomcat_helloworld_project is a name of docker image & manjunathr03 is a user id of docker hub)
+docker push manjunathr03/tomcat_helloworld_project
 
