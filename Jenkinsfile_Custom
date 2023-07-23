@@ -1,0 +1,25 @@
+pipeline {
+    agent { label "projecta_slave1" }
+
+    stages {
+        stage('Stage1-cloning the project') {
+            steps {
+                echo 'Cloning project from git'
+                git 'https://github.com/vincloud2/Helloworld-latest.git'
+            }
+        }
+    stage('Stage2- Maven_Build') {
+        steps {
+                echo 'Building the project'
+                sh 'yum install maven -y'
+                sh 'mvn clean package'
+            }
+        }
+    stage('Stage3- Deploy') {
+        steps {
+                echo 'Deploying war to tomcat'
+                deploy adapters: [tomcat8(credentialsId: 'tomcat_server', path: '', url: 'http://43.205.126.31:8080/')], contextPath: null, war: '**/*.war'
+    }
+}
+}
+}
